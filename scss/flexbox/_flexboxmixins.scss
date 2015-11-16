@@ -59,7 +59,7 @@ $align-self: (
 );
 
 // Mixins.
-// Mixins para modificar propiedades de Flexbox. 
+// Mixins para cambiar las alineaciones con Flexbox. 
 
 // Usar si solo ocupa cambiar una propiedad de Flexbox.
 @mixin direction($f-direction:column){
