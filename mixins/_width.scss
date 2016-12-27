@@ -1,0 +1,18 @@
+/// Mixins de width.
+/// @author: Arnoldo Paz
+/// Se maneja por porcentajes si no se cambia el segundo parametro.
+/// Para usar fracciones hay que cambiar el segundo parametro ; tercero para el mixin que es con breakpoints;
+/// a un número mayor que 1
+/// @example scss
+///         .conten {
+///             @include width(100);
+///  
+
+/// Base
+@mixin width($numerador:100,$denominador:1){
+  @if $denominador <= 1 {
+    width: unquote($numerador + "%");
+  } @else {
+    width: ($numerador / $denominador) * 100%;
+  }
+}

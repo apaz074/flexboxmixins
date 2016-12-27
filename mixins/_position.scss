@@ -1,0 +1,23 @@
+/// Mixin de position
+/// Uso de las diferentes propieades de position.
+/// @author  Arnoldo Paz
+/// @param   {nvalor} $p - Es el valor para position. Tiene como valor por default r. Ver el map del mixin para saber de los valores a poder usar.
+/// @param   {number} $top - Es el valor para la propiedad top de position. Tiene como valor por default n.
+/// @param   {number} $right - Es el valor para la propiedad right de position. Tiene como valor por default n.
+/// @param   {number} $bottom - Es el valor para la propiedad bottom de position. Tiene como valor por default n.
+/// @param   {number} $left - Es el valor para la propiedad left de position. Tiene como valor por default n.
+/// @param   {nvalor} $z - Es el valor para la propiedad z-index de position. Tiene como valor por default d.
+/// Valor n implica que no se usara esa propiedad.  
+/// @example scss
+///         .conten {
+///             @include position(r, 0, 0, 0, 0);
+///          }
+@mixin position($p:r, $top:n, $right:n, $bottom:n, $left:n, $z:n) {
+  $position: (r:relative, f:fixed, a:absolute);
+  position: map-get($position, $p);
+  @if $top != n{top: $top;}
+  @if $right != n{right: $right;}
+  @if $bottom != n{bottom: $bottom;}
+  @if $left != n{left: $left;}
+  @if $z != n{z-index: $z;}
+}
