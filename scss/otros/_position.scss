@@ -1,0 +1,10 @@
+/// Mixin de position
+@mixin position($p:r, $top:n, $right:n, $bottom:n, $left:n, $z:n) {
+  $position: (r:relative, f:fixed, a:absolute);
+  position: map-get($position, $p);
+  @if $top != n{top: $top;}
+  @if $right != n{right: $right;}
+  @if $bottom != n{bottom: $bottom;}
+  @if $left != n{left: $left;}
+  @if $z != n{z-index: $z;}
+}
